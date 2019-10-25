@@ -1,3 +1,16 @@
 {
-    "extends": "airbnb-base"
+  "extends": "airbnb-base",
+  "globals": {
+    "window": true,
+    "document": true,
+    "moment": true,
+    "google": true
+  },
+  "rules": {
+    "quotes": 0,
+    "prefer-template": 0,
+    "comma-dangle": 0,
+    "arrow-parens": 0,
+    "object-curly-newline": 0
+  }
 }

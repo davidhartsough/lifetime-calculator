@@ -76,8 +76,81 @@
     <link rel="stylesheet" type="text/css" href="./index.css" />
   </head>
   <body>
-    <h1>Lifetime Calculator</h1>
+    <main>
+      <h1>Lifetime Calculator</h1>
+      <div class="form" id="beginning-form">
+        <div class="form-group">
+          <label for="age">What's your age?</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            placeholder="25"
+            maxlength="2"
+            value="25"
+            min="1"
+            max="120"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lifespan"
+            >How many years do you expect your lifespan to be?</label
+          >
+          <input
+            type="number"
+            id="expected-lifespan"
+            name="lifespan"
+            placeholder="80"
+            maxlength="2"
+            value="80"
+            min="30"
+            max="120"
+          />
+        </div>
+        <p class="note">(The average lifespan is about 80 years.)</p>
+        <div class="errors" id="beginning-form-error"></div>
+        <button id="continue">Continue</button>
+      </div>
+      <section id="lifetime-calculator" style="display:none;">
+        <h2>
+          Great! You have <span id="lifespan-years"></span> years of life left.
+        </h2>
+        <p>
+          That's <span id="lifespan-months"></span> months, or
+          <span id="lifespan-days"></span> days, or
+          <span id="lifespan-hours"></span> hours, or
+          <span id="lifespan-minutes"></span> minutes.
+        </p>
+        <h3>Breakdown</h3>
+        <p>Let's break your lifetime down into different categories.</p>
+        <div>
+          <div id="chart"></div>
+          <div id="table-view">
+            <table>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Years</th>
+                  <th>Months</th>
+                  <th>Days</th>
+                  <th>Hours</th>
+                  <th>Minutes</th>
+                </tr>
+              </thead>
+              <tbody id="category-table"></tbody>
+            </table>
+          </div>
+          <h3>Edit</h3>
+          <div id="categories"></div>
+          <div class="action-row">
+            <button id="add">Add</button>
+            <button id="update">Update</button>
+          </div>
+        </div>
+      </section>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
